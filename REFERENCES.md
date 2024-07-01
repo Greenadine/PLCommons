@@ -7,6 +7,5 @@ PLCommons uses, contains code of, and/or has other references to third-party pro
 **License**: MIT License
 
 ### Annotation Command Framework (ACF)
-This plugin uses Aikar's Annotation Command Framework (ACF) for its plugin commands.
-- **Repository**: https://github.com/aikar/commands
-- **License**: MIT License
+**Repository**: https://github.com/aikar/commands
+**License**: MIT License
