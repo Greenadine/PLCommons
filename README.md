@@ -49,4 +49,4 @@ dependencies {
 
 ## License
 This project is licensed under the [MIT License](LICENSE.txt). This project also references other 
-projects, which are listed [here](REFERENCES.md).
+projects, which are listed [here](THIRD-PARTY.txt).
