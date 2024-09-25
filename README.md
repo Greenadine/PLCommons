@@ -16,6 +16,37 @@ PLCommons is a small library that provides common functionality and utilities fo
   - `DebugLogger`: For logging debug messages to the console, with the ability to enable/disable debug 
     mode through the plugin configuration.
 
+## Installation
+
+### Maven
+```xml
+<repositories>
+    <repository>
+        <id>greenadine-snapshots</id>
+        <url>https://repo.greenadine.dev/snapshots</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>dev.greenadine</groupId>
+        <artifactId>plcommons</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </dependency>
+</dependencies>
+```
+
+### Gradle
+```gradle
+repositories {
+    maven { url 'https://repo.greenadine.dev/snapshots' }
+}
+
+dependencies {
+    implementation 'dev.greenadine:plcommons:0.1.0-SNAPSHOT'
+}
+```
+
 ## License
 This project is licensed under the [MIT License](LICENSE.txt). This project also references other 
 projects, which are listed [here](REFERENCES.md).
