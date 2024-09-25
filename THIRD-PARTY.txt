@@ -1,0 +1,13 @@
+ClockSign uses/contains code of the following projects:
+
+[FCommons]
+URL: https://github.com/filoghost/FCommons
+License: MIT License
+
+[commands]
+URL: https://github.com/aikar/commands
+License: MIT License
+
+[locales]
+URL: https://github.com/aikar/locales
+License: MIT License

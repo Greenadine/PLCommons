@@ -8,3 +8,7 @@ PLCommons uses, contains code of, and/or has other references to third-party pro
 ### Annotation Command Framework (ACF)
 - **Repository**: https://github.com/aikar/commands
 - **License**: MIT License
+
+### locales
+- **Repository**: https://github.com/aikar/locales
+- **License**: MIT License

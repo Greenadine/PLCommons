@@ -1,50 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (C) 2024 Greenadine
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>dev.greenadine.plcommons</groupId>
-    <artifactId>plcommons-parent</artifactId>
+    <groupId>dev.greenadine</groupId>
+    <artifactId>plcommons</artifactId>
     <version>0.1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <name>PLCommons</name>
 
     <!-- Properties -->
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.release>8</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <bukkit.api.version>1.20-R0.1-SNAPSHOT</bukkit.api.version>
         <acf.version>0.5.1-SNAPSHOT</acf.version>
     </properties>
-
-    <!-- Modules -->
-    <modules>
-        <module>core</module>
-        <module>bukkit</module>
-        <module>paper</module>
-    </modules>
-
-    <!-- Dependency Management -->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>plcommons-core</artifactId>
-                <version>${project.version}</version>
-                <scope>compile</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.spigotmc</groupId>
-                <artifactId>spigot-api</artifactId>
-                <version>${bukkit.api.version}</version>
-                <scope>provided</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <repositories>
         <repository>
@@ -54,6 +49,7 @@
     </repositories>
 
     <dependencies>
+        <!-- Spigot API -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
@@ -61,6 +57,23 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- ACF Core -->
+        <dependency>
+            <groupId>co.aikar</groupId>
+            <artifactId>acf-core</artifactId>
+            <version>${acf.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- ACF Paper -->
+        <dependency>
+            <groupId>co.aikar</groupId>
+            <artifactId>acf-paper</artifactId>
+            <version>${acf.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Locales -->
         <dependency>
             <groupId>co.aikar</groupId>
             <artifactId>locales</artifactId>
@@ -68,6 +81,7 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- JetBrains Annotations -->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
@@ -76,16 +90,30 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>greenadine-releases</id>
+            <url>https://repo.greenadine.dev/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>greenadine-snapshots</id>
+            <url>https://repo.greenadine.dev/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <defaultGoal>clean install</defaultGoal>
 
         <resources>
             <resource>
-                <directory>${project.basedir}</directory>
+                <directory>..</directory>
                 <includes>
                     <include>LICENSE.txt</include>
-                    <include>LICENSE_fcommons.txt</include>
+                    <include>THIRD-PARTY.txt</include>
                 </includes>
+            </resource>
+            <resource>
+                <directory>../languages</directory>
             </resource>
         </resources>
     </build>
