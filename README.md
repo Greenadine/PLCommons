@@ -1,7 +1,7 @@
 # PLCommons Plugin Library
 PLCommons is a small library that provides common functionality and utilities for Bukkit/Spigot/Paper plugin development for versions 1.8-1.21.
 
-## Included Features
+## Features
 - **Command Framework**: A simple and easy-to-use command framework through the use of
   [aikar's](https://github.com/aikar/) [Annotation Command Framework](https://github.com/aikar/commands).
 - **Languages System**: Provides a single manager class for managing multiple languages for your plugin through the use of
@@ -15,6 +15,7 @@ PLCommons is a small library that provides common functionality and utilities fo
   - `PluginLogger`: For quick-and-easy logging of messages and/or exceptions to the console.
   - `DebugLogger`: For logging debug messages to the console, with the ability to enable/disable debug 
     mode through the plugin configuration.
+  - and more...
 
 ## Installation
 
